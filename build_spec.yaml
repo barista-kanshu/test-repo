@@ -2,7 +2,15 @@ version: 0.1
 component: build
 timeoutInSeconds: 300
 shell: bash
+env:
+  exportedVariables:
+    - BUILDRUN_HASH
 steps:
+  - type: Command
+    name: "define-version"
+    command: |
+      export BUILDRUN_HASH=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
+      echo "BUILDRUN_HASH: ${BUILDRUN_HASH}"
   - type: Command
     name: "hello"
     command: |
