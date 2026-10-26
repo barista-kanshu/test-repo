@@ -8,3 +8,7 @@ steps:
     command: |
       echo "Hello from OCI DevOps"
       ls -la
+outputArtifacts:
+  - name: manifest
+    type: BINARY
+    location: ${OCI_PRIMARY_SOURCE_DIR}/k8s/manifest.yaml
