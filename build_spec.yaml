@@ -1,0 +1,10 @@
+version: 0.1
+component: build
+timeoutInSeconds: 300
+shell: bash
+steps:
+  - type: Command
+    name: "hello"
+    command: |
+      echo "Hello from OCI DevOps"
+      ls -la
